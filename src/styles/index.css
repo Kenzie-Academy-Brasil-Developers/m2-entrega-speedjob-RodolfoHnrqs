@@ -82,9 +82,10 @@ main{
 
 .sectionFront, .sectionBack{
     display: flex;
-    flex-wrap: wrap;
-    gap: 36px;
-    margin-top: 32px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: max-content;
+    gap: 12px;
     height: auto;
 }
 .containerFrontCard, .containerBackCard{
@@ -159,32 +160,21 @@ main{
     width: auto;
 }
 
-@media(max-width: 400px){
+@media(min-width: 0px){
     header nav button{
         width: 100%;
     }
-}
-
-@media(min-width: 900px){
-    header nav{
-        flex-direction: row;
-        gap: 10px;
-    }
-    header nav button{
-        width: 179px;
-    }  
-}
-
-@media(max-width: 900px){
     .containerFront, .containerBack{
         overflow-x: auto;
         width: 90%;
     }
     .sectionFront, .sectionBack{
+        display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
         width: max-content;
         gap: 12px;
+        margin-top: 32px;
         
     }
     .sectionTitleFront, .sectionTitleBack{
@@ -196,4 +186,39 @@ main{
         padding-bottom: 60px;
     }
     
+}
+
+@media(min-width: 400px){
+    header nav button{
+        width: 365px;
+    } 
+}
+
+@media(min-width: 900px){
+    header nav{
+        flex-direction: row;
+        gap: 10px;
+    }
+    header nav button{
+        width: 179px;
+    } 
+    .containerFront, .containerBack{
+        overflow-x: none;
+        width: 80%;
+    }
+    .sectionFront, .sectionBack{  
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        margin-top: 32px;
+        height: auto;
+        width: 100%;
+    }
+    .sectionTitleFront, .sectionTitleBack{
+        position: unset;
+        padding-top: 80px;
+    }
+    main{
+        padding-bottom: 80px;
+    }
 }
